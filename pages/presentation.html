@@ -4,10 +4,11 @@
         <meta charset="utf-8" />
         <title>Rasmus Israelsson</title>
         <style>
-            html
+            body
             {
                 font-family: Calibri,Arial;
                 color: #444;
+                background: WhiteSmoke;
             }
             
             h1
@@ -15,83 +16,202 @@
                 font-weight: normal;
                 border-left: 10px solid seagreen;
                 padding-left: 3px;
-                transition: border 0.2s;
             }
+            
             h2
             {
                 font-weight: normal;
                 border-left: 4px solid seagreen;
                 padding-left: 3px;
-                transition: border 0.1s;
+                margin-bottom: 8px;
+                margin-top: 8px;
             }
+            
+            .content
+            {
+                opacity: 0;
+                position: relative;
+                left: 100px;
+                margin-right: 50px;
+                margin-top: 0px;
+                max-height: 0px;
+                text-align: justify;
+                transition: opacity 0.5s ease 0s, left 0.2s ease 0s, max-height 0.5s;
+            }
+            
+            .main
+            {
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                top: 100px;
+                border-left: 1px solid seagreen;
+            }
+            
         </style>
+        <script>
+            var rsInterval = setInterval(function() {
+                if (document.readyState === "complete") {
+                    
+                    var content = document.getElementsByClassName("content");
+                    for(var i = 0; i<content.length; i++)
+                    {
+                        var c = content[i];
+                        var delay = 0.3*(i) + 0.3;
+                        c.style.transition =    "opacity 0.5s ease "+(delay + 0.2)+
+                                                "s, left 0.2s ease "+(delay + 0.2)+
+                                                "s, max-height 0.3s ease "+delay+"s";
+                        c.style.opacity = "1";
+                        c.style.left = "50px";
+                        c.style.maxHeight = c.scrollHeight+"px";
+                        
+                    }
+                    clearInterval(rsInterval);
+                    
+                }
+            }, 10);
+        </script>
     </head>
     <body>
-        <h1>Rasmus Israelsson</h1>
-        <h2>Om mig</h2>
-        <p>
-            Att programmera är vad jag kan, vad jag gör och vad jag älskar!
-            Men förutom att programmera så spelar jag även League of Legends,
-            Minecraft, Garry's Mod, Skyrim, Zelda, och så vidare. Jag har
-            även en YouTube där jag och en vän lägger upp videos där vi lär ut
-            programmering i Garry's Mod.
-        </p>
-        <h2>I början</h2>
-        <p>
-            Just nu bor jag med min sambo på andra sidan bron, mitt i Färjestaden.
-            Hur jag hämnade där är dock inte så uppenbart. Jag föddes i Eskilstuna
-            år 1993 och i nästan hela två år bodde jag tillsammans med min far
-            och min mor i en liten lägenhet i Stenby. Vam som hände sen? Dem 
-            separerade och flyttade ifrån varandra. Då började mitt lilla äventyr!
-            
-        </p>
-        <h2>Familjen växer... flyttlådorna också</h2>
-        <p>
-            Två år senare hittade både far och mor nya partners, och ytligare ett
-            år senare fick jag två syskon, en på min mors sida, och en på min fars
-            sida. Året är nu 1999 och jag har 2 små systrar och flyttat ett antal
-            gånger, sex gånger för att vara exakt. Äntligen verkade det som att 
-            det lugnade ner sig lite, alla verkade lyckliga... lite för lyckliga.
-        </p>
-        <h2>Vilken trevlig överraskning!</h2>
-        <p>
-            Det dröjde inte mer än två år innan min far fick en till dotter och
-            vi vart tvugna att flytta ännu en gång! Året är 2001 och jag bor nu
-            i Hällby med min far och Valhalla med min mor. Jag har bytt skola
-            och pluggar nu i tvåan i Hällbyskolan. Allt går bra till en början, 
-            jag skaffar några vänner, några flickvänner och några mobbare, som 
-            en helt vanlig skolgång.
-        </p>
-        <h2>Pew pew</h2>
-        <p>
-            Oj oj. Året är 2003, mor och styvfar är i bråk. Dem separerar och vi
-            flyttar in till stan. Det är 9 flyttar nu. När ska jag få ro? Ungefär
-            samtidigt börjar jag få upp intresset för att skapa spel på datorn
-            jag har hos min far, jag hade ingen aning om vad jag gav mig in på.
-            Jag laddade ner ett program som hetter Game Maker 5 och började lite
-            med drag'n'drop. Drag and drop tillät mig skapa mitt första spel, 
-            tillsammans med min vän döpte vi det till "Pelle på rymmen!". Det var
-            magnifikt. Det var kul. Det var coolt. Det var mitt första. Men det 
-            var inte unikt.
-        </p>
-        <h2>
-            <span style="color: tomato;">[ERROR]</span>
-            <span style="color: orange;">[WARNING]</span>
-        </h2>
-        <p>
-            Man kunde göra roliga saker med d'n'd, men jag var inte nöjd. Jag
-            ville göra mer, jag ville att mina skapelser skulle tala och göra
-            exakt vad jag ville! Jag börja med GML, Game&nbsp;Maker&nbsp;Language.
-            Jag insåg inte vad jag gett mig in på. Så många errors, så många
-            stavfel. Sakta men säkert lärde jag mig förstå hur syntaxen fungerade
-            och strax därefter började jag lära hur variablar, strängar, siffror
-            och till och med objekt fungerade! Det tog lite till tid, men till
-            slut lärde jag mig även skapa helt egna funktioner! Det var stort och
-            jag var so stolt över mig själv.
-        </p>
-        <h2>Lite seriösare</h2>
-        <p>
-            
-        </p>
+        <div class="main">
+            <h1>Rasmus Israelsson</h1>
+            <h2>Om mig</h2>
+            <p class="content">
+                Att programmera är vad jag kan, vad jag gör och vad jag älskar!
+                Men förutom att programmera så spelar jag även League of Legends,
+                Minecraft, Garry's Mod, Skyrim, Zelda, och så vidare. Jag har
+                även en YouTube där jag och en vän lägger upp videos där vi lär ut
+                programmering i Garry's Mod.
+            </p>
+            <h2>I början</h2>
+            <p class="content">
+                Just nu bor jag med min sambo på andra sidan bron, mitt i Färjestaden.
+                Hur jag hämnade där är dock inte så uppenbart. Jag föddes i Eskilstuna
+                år 1993 och i nästan hela två år bodde jag tillsammans med min far
+                och min mor i en liten lägenhet i Stenby. Vam som hände sen? Dem 
+                separerade och flyttade ifrån varandra. Då började mitt lilla äventyr!
+                
+            </p>
+            <h2>Familjen växer... flyttlådorna också</h2>
+            <p class="content">
+                Två år senare hittade både far och mor nya partners, och ytligare ett
+                år senare fick jag två syskon, en på min mors sida, och en på min fars
+                sida. Året är nu 1999 och jag har 2 små systrar och flyttat ett antal
+                gånger, sex gånger för att vara exakt. Äntligen verkade det som att 
+                det lugnade ner sig lite, alla verkade lyckliga... lite för lyckliga.
+            </p>
+            <h2>Vilken trevlig överraskning!</h2>
+            <p class="content">
+                Det dröjde inte mer än två år innan min far fick en till dotter och
+                vi vart tvugna att flytta ännu en gång! Året är 2001 och jag bor nu
+                i Hällby med min far och Valhalla med min mor. Jag har bytt skola
+                och pluggar nu i tvåan i Hällbyskolan. Allt går bra till en början, 
+                jag skaffar några vänner, några flickvänner och några mobbare, som 
+                en helt vanlig skolgång.
+            </p>
+            <h2>Pew pew</h2>
+            <p class="content">
+                Oj oj. Året är 2003, mor och styvfar är i bråk. Dem separerar och vi
+                flyttar in till stan. Det är 9 flyttar nu. När ska jag få ro? Ungefär
+                samtidigt börjar jag få upp intresset för att skapa spel på datorn
+                jag har hos min far, jag hade ingen aning om vad jag gav mig in på.
+                Jag laddade ner ett program som hetter Game Maker 5 och började lite
+                med drag'n'drop. Drag and drop tillät mig skapa mitt första spel, 
+                tillsammans med min vän döpte vi det till "Pelle på rymmen!". Det var
+                magnifikt. Det var kul. Det var coolt. Det var mitt första. Men det 
+                var inte unikt.
+            </p>
+            <h2>
+                <span style="color: tomato;">[ERROR]</span>
+                <span style="color: orange;">[WARNING]</span>
+            </h2>
+            <p class="content">
+                Man kunde göra roliga saker med d'n'd, men jag var inte nöjd. Jag
+                ville göra mer, jag ville att mina skapelser skulle tala och göra
+                exakt vad jag ville! Jag börja med GML, Game&nbsp;Maker&nbsp;Language.
+                Jag insåg inte vad jag gett mig in på. Så många errors, så många
+                stavfel. Sakta men säkert lärde jag mig förstå hur syntaxen fungerade
+                och strax därefter började jag lära hur variablar, strängar, siffror
+                och till och med objekt fungerade! Det tog lite till tid, men till
+                slut lärde jag mig även skapa helt egna funktioner! Det var stort och
+                jag var så stolt över mig själv.
+            </p>
+            <h2>Lite seriösare</h2>
+            <p class="content">
+                Med GML kan man bara gör så mycket. Du kan skapa spel, klena spel.
+                Jag ville skapa mer, större saker. Jag började kolla runt lite och
+                hittade C#. Jag läste online och lärde mig själv i ca 2-3 år innan
+                min farbror, som var programmerare och konsult, gav mig en C# bok
+                i julklapp. Ungefär samtidigt separerade min far och min styvmor
+                och min far och jag flyttade in till stan från Hällby.
+            </p>
+            <h2>Plugg</h2>
+            <p class="content">
+                Jag började nu studera på högstadiet! Här träffade jag många vänner
+                som jag idag tyvärr inte kan kalla mer än bekanta. Jag var kass i
+                skolan! Eller ja, det beror på vad man kollar på. Mina betyg var
+                bra, men mitt studerande var svagt. Jag pressade tiden till det
+                sista och jag gjorde så lite som möjligt på lektionerna. Under
+                min tid på högstadiet träffade min far en ny kvinna, en sjuksköterska
+                från Stockholm. Mot slutet utav 9an flyttade vi allihopa till
+                en ny stor lägenhet där vi bodde ett bra tag.
+            </p>
+            <h2>På andra sidan</h2>
+            <p class="content">
+                Under min tid på högstadiet så träffade även min mor en ny kille, 
+                som visade sig bli hennes man ett flertal år frammåt. Han hade två
+                barn, en son som var 9år yngre än mi och en dotter som var en ynka
+                månad äldre än mig. Helt plötsligt var vi 6 personer och lägenheten
+                var för liten - vi var tvugna att flytta! Denna gång hamnade vi på 
+                landet. Det var lite knepigt för mig då jag inte hade tillgång till
+                internet, men å andra sidan... vi kunde skaffa hund! Vi skaffade
+                en Siberian Husky med smeknamnet Zeb, en riktigt speciellt hund.
+                Supergo och super korkad!
+            </p>
+            <h2>Vänner för livet</h2>
+            <p class="content">
+                2009, året då framtiden blev lite tydligare. Äntligen fick jag börja
+                plugga det jag ville, datorgrejs! Jag valde såklart att läsa IT
+                och jag gjorde det på John Bauer i Eskilstuna. Första året läste
+                jag bland annat programmering, webbdesign och operativsystem. 
+                Jag fattade ett större intresse för webbdesign och jag brilljerade
+                i programmeringen, tack vara min tidiga start. Jag Träffade vänner
+                som jag tror jag kommer ha livet ut och jag fick kontakter
+                värda att minnas. Jag och mina nyfunna vänner var dessutom med i
+                en tävling att skapa spel! Vi skapade att demo vi kallade
+                "Fight&nbsp;for&nbsp;Phason", och det var amazing. Det var snyggt,
+                det hade Chuck Norris referenser och det hade en bra story! Vi
+                vann inte, men vi hade väldigt kul!
+            </p>
+            <h2>Kärlek utan gränser</h2>
+            <p class="content">
+                Mot slutet utav första året på gymnasiet träffade jag en tjej på
+                DeviantART, och vi började prata och skypa dagligen. Vi bestämmde
+                att vi skulle träffas på sommaren. Jag var så taggad, men jag
+                hade ingen aning om hur det skulle gå, det var så läskigt. Sommaren
+                kom och jag åkte ner hela vägen till Varberg, där hon bodde. Vi
+                träffades och det klickade direkt. Efter en vecka i Varberg for
+                jag hem igen och gjorde mig redo för nästa år på gymnasiet.
+            </p>
+            <h2>Ett stort misstag</h2>
+            <p class="content">
+                Andra året på gymnasiet var händelselöst. Det var mycke plugg och
+                mpnga tankar på tjejen i Varberg. Vi gjorde så gott vi kunde, 
+                träffades på loven och skypade på vardagskvällarna, men det var
+                fortfarande jobbigt med fyra timmar tågresa mellan oss. I skolan
+                skapades det ett nytt program, teknik. Teknik var menat för dem
+                som ville programmera och bygga saker inom datorer, så som program,
+                spel, hårdvara osv. Jag fick valet att byta dit, men jag valde att
+                stanna med mina vänner på IT. Hade jag bytt hade jag inte behövt
+                göra valen jag gjorde senare. I början utav tvåan flyttade även
+                min mor, med styvfar, ännu en gång! Fortfarande på landet, men
+                med lite fler människor runt oss.
+            </p>
+            <h2>Företag till alla!</h2>
+            <p class="content">
+                
+            </p>
+        </div>
     </body>
 </html>
