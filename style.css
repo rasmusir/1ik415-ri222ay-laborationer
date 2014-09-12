@@ -75,7 +75,7 @@ h3 > i
 dl
 {
     border-left: 1px solid tomato;
-    margin-left: 3px;
+    margin-left: 50px;
 }
 
 dt
@@ -130,4 +130,30 @@ dt
     left: 50px;
     max-height: 0px;
     transition: opacity 0.5s ease 0s, left 0.2s ease 0s, max-height 0.3s, visibility 0.5s;
+}
+
+.menu
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    border-top: 1px solid seagreen;
+    
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+}
+
+.menu li
+{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    border-top: 3px solid seagreen;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: border 0.2s;
 }
