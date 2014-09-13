@@ -84,6 +84,47 @@ dt
     padding-left: 3px;
 }
 
+ul
+{
+    list-style-type: none;
+    padding: 0px;
+    padding-left: 1em;
+    margin: 0px;
+    position: relative;
+}
+
+ul li
+{
+    padding-left: 1em;
+    position: relative;
+}
+
+ul li:before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: .5em;
+    border-left: 1px solid orange;
+    border-top: 1px solid orange;
+    left: 0;
+    top: 50%;
+}
+
+ul li:last-child:before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    width: .5em;
+    border: 0;
+    border-top: 1px solid orange;
+    left: 0;
+    padding-left: 1px;
+    top: 50%;
+}
+
 .toggle
 {
     transition: color 0.1s, border 0.1s;
@@ -147,6 +188,9 @@ dt
 
 .menu li
 {
+    background: none;
+    border: 0;
+    padding: 0;
     list-style: none;
     display: inline-block;
     text-align: center;
@@ -155,5 +199,14 @@ dt
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    transition: border 0.2s;
+}
+
+.menu li:before
+{
+    display: none;
+}
+
+.menu li:last-child:before
+{
+    display: none;
 }
