@@ -83,6 +83,10 @@ dt
     border-left: 3px solid tomato;
     padding-left: 3px;
 }
+dd
+{
+    margin-bottom: 0.5em;
+}
 
 ul
 {
