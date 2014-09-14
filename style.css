@@ -129,6 +129,12 @@ ul li:last-child:before
     top: 50%;
 }
 
+img.tr
+{
+    float: right;
+    margin: 10px;
+}
+
 .toggle
 {
     transition: color 0.1s, border 0.1s;
@@ -167,7 +173,7 @@ ul li:last-child:before
     border-left: 10px solid seagreen;
 }
 
-.content
+.collapseable
 {
     opacity: 0;
     visibility: hidden;
@@ -213,4 +219,10 @@ ul li:last-child:before
 .menu li:last-child:before
 {
     display: none;
+}
+
+.logo
+{
+    position: absolute;
+    right: 0;
 }

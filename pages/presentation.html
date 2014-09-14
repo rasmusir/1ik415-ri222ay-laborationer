@@ -4,78 +4,7 @@
         <meta charset="utf-8" />
         <title>Rasmus Israelsson</title>
         <link rel="stylesheet" type="text/css" href="../style.css" />
-        <script>
-            HTMLElement.prototype.toggleCssClass = function(name) //Man borde inte göra så här, men det är kul :D
-            {
-                var s = "(?:^|\\s)"+name+"(?!\\S)";
-                var regexp = new RegExp(s,"g");    // /(?:^|\s)name(?!\S)/g
-                if (this.className.match(regexp))
-                {
-                    this.className = this.className.replace(regexp,"");
-                }
-                else
-                {
-                    this.className += " " + name;
-                }
-            };
-            
-            HTMLElement.prototype.hasCssClass = function(name)     //Åter igen... Ajabaja ehehe
-            {
-                var s = "(?:^|\\s)"+name+"(?!\\S)";
-                var regexp = new RegExp(s,"g");    // /(?:^|\s)name(?!\S)/g
-                return this.className.match(regexp);
-            };
-            
-            function toggleContent(e)
-            {
-                if (e.hasCssClass("closed"))
-                {
-                    expandStoryContent();
-                }
-                else
-                {
-                    collapseStoryContent();
-                }
-                e.toggleCssClass("open");
-                e.toggleCssClass("closed");
-            }
-        
-            function expandStoryContent()
-            {
-                var content = document.getElementById("story").getElementsByClassName("content");
-                for(var i = 0; i<content.length; i++)
-                {
-                    var c = content[i];
-                    var delay = 0.3*(i);
-                    c.style.transition =    "opacity 0.5s ease "+(delay + 0.2)+
-                                            "s, left 0.2s ease "+(delay + 0.2)+
-                                            "s, max-height 0.3s ease "+delay+"s,"+
-                                            " visibility 0.5s ease "+delay+"s";
-                    c.style.opacity = "1";
-                    c.style.left = "0px";
-                    c.style.visibility = "visible";
-                    c.style.maxHeight = c.scrollHeight+"px";
-                }
-            }
-            
-            function collapseStoryContent()
-            {
-                var content = document.getElementById("story").getElementsByClassName("content");
-                for(var i = 0; i<content.length; i++)
-                {
-                    var c = content[i];
-                    var delay = 0.2*(i);
-                    c.style.transition =    "opacity 0.2s ease "+delay+
-                                            "s, left 0.2s ease "+delay+
-                                            "s, max-height 0.2s ease "+(delay + 0.2)+"s,"+
-                                            " visibility 0.2s ease "+(delay + 0.2)+"s";
-                    c.style.opacity = "0";
-                    c.style.left = "50px";
-                    c.style.visibility = "hidden";
-                    c.style.maxHeight = "0px";
-                }
-            }
-        </script>
+        <script src="../script.js"> </script>
     </head>
     <body>
         <div class="main">
@@ -122,14 +51,16 @@
             <h2 class="toggle closed" onclick="toggleContent(this)">Mitt liv</h2>
             <div id="story">
                 <h3>Om mig</h3>
-                <p class="content">
+                <p class="collapseable">
+                    <img  id="uwpic" src="../pics/ultimatewire.jpg"class="tr"/>
                     Att programmera är vad jag kan, vad jag gör och vad jag älskar!
                     Men förutom att programmera så spelar jag även League of Legends,
                     Minecraft, Garry's Mod, Skyrim, Zelda, och så vidare. Jag har
-                    även en YouTube där jag och en vän lägger upp videos där vi lär ut
+                    även en YouTube, <a href="https://www.youtube.com/user/UltimateWire">Ultimate Wire</a>
+                    , där jag och en vän lägger upp videos där vi lär ut
                     programmering i Garry's Mod.
                 </p>
-                <p class="content">
+                <p class="collapseable">
                     Just nu bor jag med min sambo på andra sidan bron, mitt i Färjestaden.
                     Hur jag hämnade där är dock inte så uppenbart. Jag föddes i Eskilstuna
                     år 1993 och i nästan hela två år bodde jag tillsammans med min far
@@ -138,7 +69,7 @@
                     
                 </p>
                 <h3>Familjen växer... flyttlådorna också</h3>
-                <p class="content">
+                <p class="collapseable">
                     Två år senare hittade både far och mor nya partners, och ytligare ett
                     år senare fick jag två syskon, en på min mors sida, och en på min fars
                     sida. Året är nu 1999 och jag har 2 små systrar och flyttat ett antal
@@ -146,7 +77,7 @@
                     det lugnade ner sig lite, alla verkade lyckliga... lite för lyckliga.
                 </p>
                 <h3>Vilken trevlig överraskning!</h3>
-                <p class="content">
+                <p class="collapseable">
                     Det dröjde inte mer än två år innan min far fick en till dotter och
                     vi vart tvugna att flytta ännu en gång! Året är 2001 och jag bor nu
                     i Hällby med min far och Valhalla med min mor. Jag har bytt skola
@@ -155,7 +86,7 @@
                     en helt vanlig skolgång.
                 </p>
                 <h3>Pew pew</h3>
-                <p class="content">
+                <p class="collapseable">
                     Oj oj. Året är 2003, mor och styvfar är i bråk. Dem separerar och vi
                     flyttar in till stan. Det är 9 flyttar nu. När ska jag få ro? Ungefär
                     samtidigt börjar jag få upp intresset för att skapa spel på datorn
@@ -172,7 +103,7 @@
                     <span style="color: tomato;">[ERROR]</span>
                     <span style="color: orange;">[WARNING]</span>
                 </h3>
-                <p class="content">
+                <p class="collapseable">
                     Man kunde göra roliga saker med d'n'd, men jag var inte nöjd. Jag
                     ville göra mer, jag ville att mina skapelser skulle tala och göra
                     exakt vad jag ville! Jag börja med GML, Game&nbsp;Maker&nbsp;Language.
@@ -184,7 +115,7 @@
                     jag var så stolt över mig själv.
                 </p>
                 <h3>Lite seriösare</h3>
-                <p class="content">
+                <p class="collapseable">
                     Med GML kan man bara gör så mycket. Du kan skapa spel, klena spel.
                     Jag ville skapa mer, större saker. Jag började kolla runt lite och
                     hittade <a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a>
@@ -194,7 +125,7 @@
                     och min far och jag flyttade in till stan från Hällby.
                 </p>
                 <h3>Plugg</h3>
-                <p class="content">
+                <p class="collapseable">
                     Jag började nu studera på högstadiet! Här träffade jag många vänner
                     som jag idag tyvärr inte kan kalla mer än bekanta. Jag var kass i
                     skolan! Eller ja, det beror på vad man kollar på. Mina betyg var
@@ -205,7 +136,7 @@
                     en ny stor lägenhet där vi bodde ett bra tag.
                 </p>
                 <h3>På andra sidan</h3>
-                <p class="content">
+                <p class="collapseable">
                     Under min tid på högstadiet så träffade även min mor en ny kille, 
                     som visade sig bli hennes man ett flertal år frammåt. Han hade två
                     barn, en son som var 9år yngre än mi och en dotter som var en ynka
@@ -217,7 +148,7 @@
                     Supergo och super korkad!
                 </p>
                 <h3>Vänner för livet</h3>
-                <p class="content">
+                <p class="collapseable">
                     2009, året då framtiden blev lite tydligare. Äntligen fick jag börja
                     plugga det jag ville, datorgrejs! Jag valde såklart att läsa IT
                     och jag gjorde det på John Bauer i Eskilstuna. Första året läste
@@ -232,7 +163,7 @@
                     vann inte, men vi hade väldigt kul!
                 </p>
                 <h3>Kärlek utan gränser</h3>
-                <p class="content">
+                <p class="collapseable">
                     Mot slutet utav första året på gymnasiet träffade jag en tjej på
                     <a href="http://deviantart.com/">DeviantART</a>
                     , och vi började prata och skypa dagligen. Vi bestämmde
@@ -243,9 +174,9 @@
                     jag hem igen och gjorde mig redo för nästa år på gymnasiet.
                 </p>
                 <h3>Ett stort misstag</h3>
-                <p class="content">
+                <p class="collapseable">
                     Andra året på gymnasiet var händelselöst. Det var mycke plugg och
-                    mpnga tankar på tjejen i Varberg. Vi gjorde så gott vi kunde, 
+                    många tankar på tjejen i Varberg. Vi gjorde så gott vi kunde, 
                     träffades på loven och skypade på vardagskvällarna, men det var
                     fortfarande jobbigt med fyra timmar tågresa mellan oss. I skolan
                     skapades det ett nytt program, teknik. Teknik var menat för dem
@@ -257,7 +188,7 @@
                     med lite fler människor runt oss.
                 </p>
                 <h3>Fortsättning kommer</h3>
-                <p class="content">
+                <p class="collapseable">
                     <!-- To be continued...
                         Kommentarer i html är jobbiga, men jag antar att det inte
                         finns ett bättre sätt.... ehm.. <// kanske detta... någon? //>
