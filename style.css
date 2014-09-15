@@ -129,6 +129,26 @@ ul li:last-child:before
     top: 50%;
 }
 
+table
+{
+    padding: 0;
+    margin: 5px;
+    border: 0;
+    border: 0px solid seagreen;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead th
+{
+    font-weight: normal;
+    background: seagreen;
+    color: rgba(0,0,0,0.6);
+}
+tbody tr:nth-child(even)
+{
+    background: rgba(46,139,87,0.1);
+}
 img.tr
 {
     float: right;
