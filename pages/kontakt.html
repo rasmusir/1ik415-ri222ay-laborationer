@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Kontakt</title>
+        <link rel="stylesheet" type="text/css" href="../style.css" />
+    </head>
+    <body>
+    <div class="main">
+        <h1>Kontakt</h1>
+            <ul class="menu">
+                <li>
+                    <a href="../index.html">Start</a>
+                </li>
+                <li>
+                    <a href="laborationer.html">Laborationer</a>
+                </li>
+                <li>
+                    <a href="ex.html">Experiment och Exempel</a>
+                </li>
+                <li>
+                    <a href="presentation.html">Presentation</a>
+                </li>
+                <li>
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <h2>Kontaktformulär</h2>
+            <p>
+                Obs! Detta är ett påhittat formulär.
+                <form action="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbintro/form.php" method="POST">
+                    <fieldset>
+                        <legend>Fråga</legend>
+                        <label>Ärendetyp:</label>
+                            <select name="subject">
+                                <option value="question">Fråga</option>
+                                <option value="info">Information</option>
+                            </select>
+                        <br/>
+                        <label>Rubrik:</label>
+                            <input type="textbox" name="title" />
+                        <br/>
+                        <label>Text:</label>
+                            <textarea name="text"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Information om dig</legend>
+                        <label>Kontakta mig via mail:</label>
+                            <input type="checkbox" name="contact" value="mail"/>
+                            <br/>
+                        <label>Kontakta mig via telefon:</label>
+                            <input type="checkbox" name="contact" value="phone"/>
+                    </fieldset>
+                    <input type="submit" value="Skicka frågan"/>
+                </form>
+            </p>
+        </div>
+    </body>
+</html>

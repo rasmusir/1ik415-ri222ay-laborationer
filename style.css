@@ -155,6 +155,13 @@ img.tr
     margin: 10px;
 }
 
+fieldset
+{
+    border: 1px solid seagreen;
+    border-left: 3px solid seagreen;
+    margin-left: 0px;
+}
+
 .toggle
 {
     transition: color 0.1s, border 0.1s;
