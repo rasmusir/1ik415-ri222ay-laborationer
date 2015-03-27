@@ -290,3 +290,14 @@ input[type="checkbox"]
     top: 0px;
     display: none;
 }
+
+.vcard
+{
+    opacity: 0.3;
+    transition: all 0.5s;
+}
+
+.vcard:hover
+{
+    opacity: 1;
+}

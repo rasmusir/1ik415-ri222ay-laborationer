@@ -1,6 +1,8 @@
 .gallery
 {
-    
+    position: relative;
+    padding: 100px;
+    box-sizing: border-box;
 }
 
 .gallery > div
@@ -13,6 +15,12 @@
     width: 200px;
     position: relative;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.gallery > div:hover
+{
+    transform: scale(2,2) rotate(0deg) !important;
 }
 
 .gallery > div > img
@@ -26,4 +34,29 @@
     content: attr(title);
     text-align: center;
     width: 100%;
+}
+
+.gallery > div:nth-child(1)
+{
+    transform: rotate(-2deg);
+}
+
+.gallery > div:nth-child(2n)
+{
+    transform: rotate(7deg);
+}
+
+.gallery > div:nth-child(3n)
+{
+    transform: rotate(-5deg);
+}
+
+.gallery > div:nth-child(5n)
+{
+    transform: rotate(3deg);
+}
+
+.gallery > div:nth-child(7n)
+{
+    transform: rotate(-7deg);
 }
