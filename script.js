@@ -78,8 +78,11 @@ var interval = setInterval(function() {
     if (document.readyState == "complete")
     {
         var path = window.location.href;
-        var scrollId = /#(.+?(?=&|$))/.exec(path)[1];
-        
+        var scrollId = /#(.+?(?=&|$))/.exec(path);
+        if (scrollId)
+            scrollId = scrollId[1];
+        else
+            return;
         var element = document.getElementById(scrollId);
         if (element!==null)
         {

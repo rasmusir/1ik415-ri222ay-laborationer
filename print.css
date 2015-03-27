@@ -1,0 +1,28 @@
+html,body
+{
+    color: black !important;
+    font-family: serif;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+video
+{
+    display: none;
+}
+
+tbody tr:nth-child(even)
+{
+    background: red;
+}
+
+.menu
+{
+    display: none;
+}
+
+.logo
+{
+    display: none;
+}
