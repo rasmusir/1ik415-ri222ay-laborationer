@@ -1,0 +1,29 @@
+.gallery
+{
+    
+}
+
+.gallery > div
+{
+    background: white;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+    width: 200px;
+    position: relative;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+
+.gallery > div > img
+{
+    max-width: 100%;
+}
+
+.gallery > div:after
+{
+    display: block;
+    content: attr(title);
+    text-align: center;
+    width: 100%;
+}
